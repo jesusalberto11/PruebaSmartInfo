@@ -1,0 +1,201 @@
+@import url("./fonts.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+  max-width: 85ch;
+}
+
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  height: 100%;
+  width: 100vw;
+
+  background-color: #1e2329;
+  color: #fffff5db;
+
+  overflow-x: hidden;
+
+  padding: 0px 10px;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+
+  background-color: #0d1117;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+
+  padding: 0px 10px;
+}
+
+hr {
+  background-color: #8d99ae;
+
+  height: 5px;
+  min-height: 5px;
+  width: 100%;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  border: none;
+  border-radius: 20px;
+}
+
+pre code {
+  background-color: #161618;
+  border: none;
+  display: block;
+  padding: 20px;
+}
+
+.user-circle {
+  cursor: pointer;
+
+  height: 40px;
+  width: 40px;
+
+  min-width: 40px;
+  min-height: 40px;
+
+  border-radius: 50%;
+  background-color: #d9d9d9;
+
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    180deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+
+  transition: all 0.2s;
+
+  &:hover {
+    filter: drop-shadow(0 0 15px #757cf5d5);
+  }
+}
+
+.error-box {
+  height: 35px;
+
+  background-color: #370617;
+  border: 1px solid #d00000;
+}
+
+.rounded-corners {
+  border-radius: 5px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.min-with-fit-content {
+  min-width: fit-content;
+}
+
+.flex {
+  display: flex;
+}
+
+.warp {
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

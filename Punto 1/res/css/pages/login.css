@@ -1,0 +1,123 @@
+hr {
+  width: 100%;
+}
+
+.login-form-container {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-items {
+  width: 100%;
+  max-width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.flex.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-item {
+  width: 100%;
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.login-form-input {
+  height: 48px;
+  min-height: 48px;
+  width: 100%;
+
+  border: 1px solid #90e0ef;
+  border-radius: 5px;
+
+  padding: 10px 10px;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.login-form-input:focus {
+  outline: 2px solid #028090;
+}
+
+.login-form-input::placeholder {
+  color: var(--TASK-MODAL-DESCRIPTION-PLACEHOLDER-TEXT-COLOR);
+}
+
+.google-btn,
+.login-button {
+  cursor: pointer;
+
+  background-color: #02c39a;
+
+  height: 48px;
+  max-height: 48px;
+  min-height: 48px;
+  width: 100%;
+
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  padding: 10px 10px;
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  transition: all 0.2s;
+}
+
+.login-button:hover {
+  background-color: #00a896;
+}
+
+.login-button:active {
+  background-color: #02c39a;
+}
+
+.google-btn {
+  background-color: #fff;
+  color: #000000;
+}
+
+.google-btn:hover {
+  background-color: #f5f3f4;
+}
+
+.create-account,
+.or-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.create-account {
+  gap: 5px;
+}
+
+.link {
+  cursor: pointer;
+  color: #247eff;
+
+  text-decoration: underline;
+}
