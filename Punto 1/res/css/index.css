@@ -104,10 +104,12 @@ pre code {
 }
 
 .error-box {
-  height: 35px;
+  height: 55px;
 
   background-color: #370617;
   border: 1px solid #d00000;
+
+  padding: 5px;
 }
 
 .rounded-corners {
