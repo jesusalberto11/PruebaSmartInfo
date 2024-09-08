@@ -1,0 +1,50 @@
+.app-container {
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+}
+
+.main-content {
+  overflow-y: scroll;
+}
+
+.app-footer {
+  display: none;
+}
+
+.app-header,
+.app-footer {
+  height: 60px;
+
+  padding: 0px 15px;
+}
+
+.hide-on-responsive {
+  display: block;
+}
+
+.show-on-responsive {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .app-container {
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+  }
+
+  .app-footer {
+    display: block;
+  }
+
+  .hide-on-responsive {
+    display: none;
+  }
+
+  .show-on-responsive {
+    display: block;
+  }
+}

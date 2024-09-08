@@ -1,0 +1,43 @@
+.new-set-exercises-list {
+  max-height: 150px;
+
+  overflow-y: auto;
+
+  padding: 5px;
+}
+
+.new-set-exercises-list label {
+  cursor: pointer;
+
+  height: 35px;
+  min-height: 35px;
+
+  background-color: #fff;
+  color: black;
+
+  padding: 0px 10px;
+
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #b4b4b4;
+
+  margin-right: 5px;
+
+  user-select: none;
+}
+
+.new-set-exercises-list label:hover {
+  background-color: #b4b4b4;
+}
+
+.new-set-exercises-list input:focus {
+  outline: none;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+
+  background-color: #fff;
+  color: black;
+}

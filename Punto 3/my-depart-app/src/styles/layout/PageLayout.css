@@ -1,0 +1,27 @@
+.page-content {
+  max-width: 75ch;
+
+  padding: 10px;
+}
+
+.page-content::after {
+  content: "";
+
+  min-height: 50px;
+}
+
+.page-title {
+  color: #aeaeae;
+
+  font-size: 26px;
+}
+
+.page-title-second-text {
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .page-content {
+    max-width: 100%;
+  }
+}

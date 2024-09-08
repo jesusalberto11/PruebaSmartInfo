@@ -1,0 +1,40 @@
+.simple-button {
+  cursor: pointer;
+
+  height: 32px;
+  width: auto;
+  min-width: 30px;
+  min-height: 30px;
+
+  padding: 0px 5px;
+
+  color: #fff;
+  background-color: #fff;
+
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+.simple-button svg {
+  fill: black;
+}
+
+.simple-button:hover {
+  filter: drop-shadow(0 0 8px #ff8b8b);
+}
+
+.simple-button:active {
+  transform: scale(0.9);
+}

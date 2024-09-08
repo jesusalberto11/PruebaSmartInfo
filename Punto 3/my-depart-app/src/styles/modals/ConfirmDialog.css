@@ -1,0 +1,18 @@
+.confirm-dialog-btn {
+  cursor: pointer;
+
+  height: 30px;
+  width: 130px;
+
+  font-size: 14px;
+
+  background-color: #fff;
+  color: #000;
+
+  border: none;
+  border: 1px solid #dbdbdb;
+
+  &:hover {
+    background-color: #dbdbdb;
+  }
+}

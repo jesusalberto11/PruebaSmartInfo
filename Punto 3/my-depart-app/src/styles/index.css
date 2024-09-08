@@ -1,0 +1,391 @@
+@import url("./fonts.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Lato, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+
+  overflow-y: hidden;
+}
+
+svg {
+  min-width: 16px;
+  fill: black;
+}
+
+hr {
+  background-color: #e71b2a;
+
+  height: 3px;
+  min-height: 3px;
+  width: 99%;
+
+  margin: 0 auto;
+  border: none;
+  border-radius: 20px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input,
+.radio-label,
+.filtered-list-item {
+  height: 35px;
+
+  background-color: #fff;
+  color: black;
+
+  padding: 0px 10px;
+
+  border: none;
+  border-radius: 5px;
+  border: 2px solid #b4b4b4;
+}
+
+input:focus {
+  outline: 2px solid #006f57;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .radio-label {
+  outline: 2px solid #006f57;
+}
+
+input[type="radio"]:not(:checked) + .radio-label:hover {
+  background-color: #b4b4b4;
+}
+
+.filtered-list-item:hover {
+  cursor: pointer;
+  background-color: #b4b4b4;
+}
+
+.text-link a {
+  cursor: pointer;
+  color: #000fe0;
+}
+
+.radio-label {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button,
+.confirm-button {
+  cursor: pointer;
+
+  height: 40px;
+
+  background-color: #3bc14a;
+  color: white;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #34a941;
+  }
+}
+
+.delete-button {
+  background-color: #e71b2a;
+
+  &:hover {
+    background-color: #c1121f;
+  }
+}
+
+.list {
+  overflow-y: auto;
+}
+
+.list-item {
+  height: 70px;
+
+  background-color: #fff;
+  color: black;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #b4b4b4;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.ghost-list-item {
+  height: 70px;
+}
+
+.list-item:hover {
+  cursor: pointer;
+
+  background-color: #b4b4b4;
+}
+
+.list-item-name {
+  font-size: 20px;
+}
+
+.list-item-footer p {
+  color: #40475d;
+}
+
+/*   Open state of the dialog  */
+dialog[open] {
+  pointer-events: all;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*   Closed state of the dialog   */
+dialog {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.95);
+
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out,
+    overlay 0.2s ease-out allow-discrete, display 0.2s ease-out allow-discrete;
+}
+
+/*   Before-open state  */
+/* Needs to be after the previous dialog[open] rule to take effect,
+    as the specificity is the same */
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0%);
+  transition: display 0.2s allow-discrete, overlay 0.2s allow-discrete,
+    background-color 0.2s;
+}
+
+dialog[open]::backdrop {
+  background-color: rgb(0 0 0 / 25%);
+}
+
+/* This starting-style rule cannot be nested inside the above selector
+because the nesting selector cannot represent pseudo-elements. */
+
+@starting-style {
+  dialog[open]::backdrop {
+    background-color: rgb(0 0 0 / 0%);
+  }
+}
+
+dialog::backdrop {
+  background: rgb(89, 13, 34);
+  background: linear-gradient(
+    180deg,
+    rgba(89, 13, 34, 1) 0%,
+    rgba(89, 13, 34, 1) 100%
+  );
+  opacity: 0.65;
+}
+
+.simple-dialog {
+  height: auto;
+  width: auto;
+
+  place-self: center;
+
+  padding: 15px;
+
+  background-color: #fff;
+
+  color: black;
+
+  border: 1px solid #dbdbdb;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.box {
+  height: 80px;
+  min-height: 80px;
+
+  background-color: #cfecf6;
+
+  padding: 0px 20px;
+}
+
+.white-box {
+  background-color: #ffffff;
+
+  border: 2px solid #f2f1f1;
+}
+
+.red-box {
+  background-color: #ffccd5;
+}
+
+.blue-box {
+  background-color: #cfecf6;
+}
+
+.blue-box:hover {
+  cursor: pointer;
+
+  background-color: #c3dee7;
+}
+
+.green-box {
+  background-color: #d8f3dc;
+}
+
+.yellow-box {
+  background-color: #fff3b0;
+}
+
+li:nth-child(even) {
+  background-color: #cfecf6;
+}
+
+li:nth-child(odd) {
+  background-color: #fff3b0;
+}
+
+li:nth-child(even):hover {
+  cursor: pointer;
+
+  background-color: #c3dee7;
+}
+
+li:nth-child(odd):hover {
+  cursor: pointer;
+
+  background-color: #f0e4a5;
+}
+
+.circle {
+  height: 45px;
+  width: 45px;
+
+  min-width: 45px;
+  min-height: 45px;
+
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.rounded-corners {
+  border-radius: 5px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.min-with-fit-content {
+  min-width: fit-content;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
