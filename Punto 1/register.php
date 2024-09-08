@@ -3,8 +3,8 @@ require_once("./classes/Register.class.php");
 
 $register = null;
 
-if (isset($_POST["email"]) && isset($_POST["password"])) {
-    $register = new Register($_POST["email"], $_POST["password"]);
+if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["repeatPassword"])) {
+    $register = new Register($_POST["email"], $_POST["password"], $_POST["repeatPassword"]);
 }
 
 ob_start();
@@ -27,66 +27,82 @@ if (isset($_SESSION['valid'])) {
     <link rel="stylesheet" href="./res/css/pages/login.css">
 </head>
 
-<body>
-    <main class="h-full w-full">
-        <div class="h-full w-full flex column centered">
-            <div class="login-form-container">
-                <div class="form-items">
-                    <h1>Registrarse a MySecret</h1>
-                    <hr />
-                    <?php if (isset($register)): ?>
-                        <?php if ($register->get_status()["status"] == "error"): ?>
-                            <p class="error-box flex centered rounded-corners">
-                                <?php echo $register->get_status()["error"]; ?>
-                            </p>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                    <form
-                        action="" method="POST" id="register-form"
-                        class="flex column"
-                        style="gap: 15px">
-                        <div class="form-item flex">
-                            <label for="email" hidden>
-                                Email
-                            </label>
-                            <input
-                                id="email"
-                                name="email"
-                                class="login-form-input"
-                                placeholder="Email *"
-                                type="email"
-                                autocomplete="email"
-                                required />
-                        </div>
-                        <div class="form-item flex">
-                            <label for="password" hidden>
-                                Contraseña
-                            </label>
-                            <input
-                                id="password"
-                                name="password"
-                                class="login-form-input"
-                                type="password"
-                                placeholder="Contraseña *"
-                                autocomplete="current-password"
-                                required />
-                        </div>
+<div id="root">
 
-                        <button class="login-button flex centered" type="submit">
-                            Registrarse
-                        </button>
+    <body class="page-layout">
+        <main>
+            <div class="h-full w-full flex column centered">
+                <div class="login-form-container">
+                    <div class="form-items">
+                        <h1>Registrarse a MySecret</h1>
                         <hr />
-                        <div class="create-account">
-                            <p>¿Ya tienes una cuenta?</p>
-                            <a class="link" href="/index.php">
-                                Acceder
-                            </a>
-                        </div>
-                    </form>
+                        <?php if (isset($register)): ?>
+                            <?php if ($register->get_status()["status"] == "error"): ?>
+                                <p class="error-box flex centered rounded-corners">
+                                    <?php echo $register->get_status()["error"]; ?>
+                                </p>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <form
+                            action="" method="POST" id="register-form"
+                            class="flex column"
+                            style="gap: 15px">
+                            <div class="form-item flex">
+                                <label for="email" hidden>
+                                    Email
+                                </label>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    class="login-form-input"
+                                    placeholder="Email *"
+                                    type="email"
+                                    autocomplete="email"
+                                    required />
+                            </div>
+                            <div class="form-item flex">
+                                <label for="password" hidden>
+                                    Contraseña
+                                </label>
+                                <input
+                                    id="password"
+                                    name="password"
+                                    class="login-form-input"
+                                    type="password"
+                                    placeholder="Contraseña *"
+                                    autocomplete="current-password"
+                                    required />
+                            </div>
+                            <div class="form-item flex">
+                                <label for="repeatPassword" hidden>
+                                    Repetir contraseña
+                                </label>
+                                <input
+                                    id="repeatPassword"
+                                    name="repeatPassword"
+                                    class="login-form-input"
+                                    type="password"
+                                    placeholder="Repetir contraseña *"
+                                    autocomplete="r-current-password"
+                                    required />
+                            </div>
+
+                            <button class="login-button flex centered" type="submit">
+                                Registrarse
+                            </button>
+                            <hr />
+                            <div class="create-account">
+                                <p>¿Ya tienes una cuenta?</p>
+                                <a class="link" href="/index.php">
+                                    Acceder
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+    </body>
     </main>
-</body>
 
 </html>
