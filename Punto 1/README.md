@@ -41,7 +41,7 @@ public  static  function  getConnection()
 //Resto del código...
 ```
 
-En este archivo debes modificar el valor de las variables: `host`, `port`, `user`, `password` y `driver`, para hacerlas coincidir con tu base datos (MySQL o PostgreSQL),
+En este archivo debes modificar el valor de las variables: `host`, `port`, `user`, `password` y `driver`, para hacerlas coincidir con tu base de datos (MySQL o PostgreSQL),
 
 **Importante**: El valor de la variable `driver` debe ser `mysql` (MySQL) o `psql` (PostgreSQL) según la base de datos que tengas instalada.
 
