@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+![SmartInfoLogo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfKYXmvIKdmGQ94aRom2nKEMoBdHWLcRLKMA&s)
+# Prueba técnica SmartInfo!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Punto 3 (Frontend)
 
-Currently, two official plugins are available:
+Requisitos:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ - Implementar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para las entidades "Personas" y "Departamentos".
+ - Relacionar cada persona con un departamento y permitir consultas SQL basadas en esta relación.
+ - Asegurar que las consultas sean seguras y prevengan SQL Injection.
 
-## Expanding the ESLint configuration
+## Pre-requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Importante**: Debes tener instalado ReactJS y NodeJS en tu sistema para ejecutar el proyecto.
 
-- Configure the top-level `parserOptions` property like this:
+Clona el repositorio completo utilizando Git en tu escritorio o en a la carpeta que desees.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/jesusalberto11/PruebaSmartInfo.git
+```
+Copia la carpeta `Punto 3/my-depart-app` al directorio que gustes.
+
+## Instalando las dependencias
+
+Entra a la carpeta del proyecto, abre una ventana de comandos y ejecuta el comando: 
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Esto instalará las dependencias necesarias para que el proyecto funcione.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Probando
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Una vez terminado el proceso de instalación de dependencias, no cierres la terminal y ejecuta el comando:
+
+```bash
+npm run serve
 ```
+
+Y se abrirá el servidor de desarrollo en `http://localhost:5173/`, utiliza tu navegador web para acceder a esa ruta.
+
+**Importante**: Debes configurar el Back-end para que la aplicación funcione correctamente.
