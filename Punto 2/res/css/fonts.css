@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Pacifico";
+  src: url("../assets/Pacifico-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/Inter-Variable.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+.pacifico-font {
+  font-family: Pacifico;
+}
+
+.montserrat-font {
+  font-family: Montserrat;
+  font-weight: 900;
+}
